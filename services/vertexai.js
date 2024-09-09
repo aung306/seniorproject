@@ -1,8 +1,6 @@
 import { VertexAI } from '@google-cloud/vertexai';
 import { ChatVertexAI } from "@langchain/google-vertexai";
 
-GOOGLE_APPLICATION_CREDENTIALS=credentials.json;
-
 const model = new ChatVertexAI({
   model: "gemini-1.5-flash",
   temperature: 0
