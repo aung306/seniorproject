@@ -3,36 +3,37 @@ import { useState, useEffect } from 'react';
 import type { Template } from '@pdfme/common';
 import { BLANK_PDF } from '@pdfme/common';
 import { generate } from '@pdfme/generator';
+import { line, image } from '@pdfme/schemas';
 
+//for reference, the pdf is 200 pixels long
 const template: Template = {
   basePdf: BLANK_PDF,
   schemas: [
     [
       {
-        name: 'RhythmAI',
+        name: 'Title',
         type: 'text',
-        position: { x: 0, y: 0 },
-        width: 10,
+        position: { x: 100, y: 10 },
+        width: 100,
         height: 10,
       },
       {
-        name: 'b',
+        name: 'Description',
         type: 'text',
-        position: { x: 10, y: 10 },
-        width: 10,
-        height: 10,
+        position: { x: 10, y: 30 },
+        width: 190,
+        height: 200,
       },
       {
-        name: 'c',
+        name: 'Composition',
         type: 'text',
-        position: { x: 20, y: 20 },
-        width: 10,
-        height: 10,
+        position: { x: 10, y: 50 },
+        width: 190,
+        height: 200,
       },
     ],
   ],
 };
-const inputs = [{ a: 'a1', b: 'b1', c: 'c1' }];
 
 
 export const meta: MetaFunction = () => {
@@ -68,7 +69,12 @@ export default function Index() {
 
     setLoading(true);
 
-    const inputs = [{ a: 'RhythmAI', b: 'b1', c: 'c1' }]; // Customize inputs based on form data
+    const inputs = [{
+      Title: 'RhythmAI',
+      Description: audioDescription,
+      Composition: 'Thanks for using our ComposerBot!'
+    }];
+
     try {
       const pdf = await generate({ template, inputs });
       const blob = new Blob([pdf.buffer], { type: 'application/pdf' });
@@ -126,7 +132,7 @@ export default function Index() {
               <div className="mt-4">
                 <a
                   href={downloadLink}
-                  download="generated-composition.pdf"
+                  download="rhythmai-composerbot.pdf"
                   className="text-center w-full rounded-md border border-gray-300 bg-purple-800 animate-fade-down font-[Poppins] p-4 text-sm text-purple-100"
                 >
                   Download PDF
