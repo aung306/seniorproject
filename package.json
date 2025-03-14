@@ -14,6 +14,8 @@
     "@google-cloud/vertexai": "^1.7.0",
     "@langchain/google-vertexai": "^0.0.27",
     "@langchain/openai": "^0.2.10",
+    "@pdfme/common": "^5.3.13",
+    "@pdfme/generator": "^5.3.13",
     "@remix-run/node": "^2.11.2",
     "@remix-run/react": "^2.11.2",
     "@remix-run/serve": "^2.11.2",
