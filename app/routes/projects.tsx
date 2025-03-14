@@ -11,10 +11,11 @@ export default function Projects() {
   return (
 <div className="bg-[url('../img/rhythm.gif')] bg-no-repeat bg-cover py-24 p-12">
 <div className="bg-black bg-cover bg-opacity-70 p-4 rounded-md">
-  <header className="font-[Poppins] text-center flex w-full max-w text-purple-100">
-    <a href="/" className="flex w-full">RHYTHMAI</a>
-    <a href="/projects" className="flex w-full">PROJECTS</a>
-    <a href="/aboutus" className="flex w-full">ABOUT US</a>
+<header className="font-mono font-bold text-center flex w-full max-w text-purple-100">
+    <img src="../img/rai.png" className="w-8 h-8"/>
+    <a href="/" className="flex w-full m-2">RHYTHMAI</a>
+    <a href="/projects" className="flex w-full justify-center m-2">PROJECTS</a>
+    <a href="/aboutus" className="flex w-full justify-center m-2">ABOUT US</a>
   </header>
     <div className="flex w-full max-w">
       <div className="flex-1 p-10 m-10">
