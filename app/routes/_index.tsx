@@ -93,10 +93,10 @@ export default function Index() {
   };
 
   return (
-<div className="bg-[url('../img/rhythm.gif')] bg-cover absolute top-0 left-0 w-full h-screen">
+<div className="bg-[url('/img/rhythm.gif')] bg-cover absolute top-0 left-0 w-full h-screen">
 <div className="bg-black bg-cover bg-opacity-50 absolute top-0 left-0 w-full h-screen">
   <header className="font-mono font-bold text-center flex w-full max-w text-purple-100 p-4 m-2 ml-16">
-    <img src="../img/rai.png" className="w-8 h-8"/>
+    <img src="/img/rai.png" className="w-8 h-8"/>
     <a href="/" className="flex w-full m-2 hover:animate-bounce">RHYTHMAI</a>
     <a href="/projects" className="flex w-full justify-center m-2 hover:animate-ping">PROJECTS</a>
     <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-ping">ABOUT US</a>
@@ -115,7 +115,7 @@ export default function Index() {
         <li>
           <input type="file" name="mp3" accept=".mp3" onChange={handleFileChange} className="flex justify-center w-full text-center rounded-md border border-gray-300 bg-purple-100 p-3 font-[Poppins] text-sm text-violet-900"/>
           <div className="flex justify-center pt-3 pb-3">
-          <img src="../img/think.gif" className="opacity-50 w-[25%] object-contain"/>
+          <img src="/img/think.gif" className="opacity-50 w-[25%] object-contain"/>
           </div>
           <input type="text" placeholder="Tell us a little it about your audio..."
             value={audioDescription}
