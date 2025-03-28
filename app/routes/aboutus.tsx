@@ -9,10 +9,10 @@ export const meta: MetaFunction = () => {
 
 export default function AboutUs() {
   return (
-<div className="bg-[url('../img/rhythm.gif')] bg-cover py-24 p-12 absolute top-0 left-0 w-full h-screen">
+<div className="bg-[url('/img/rhythm.gif')] bg-cover py-24 p-12 absolute top-0 left-0 w-full h-screen">
 <div className="bg-black bg-cover bg-opacity-50 absolute top-0 left-0 w-full h-screen">
 <header className="font-mono font-bold text-center flex w-full max-w text-purple-100 p-4 m-2 ml-16">
-    <img src="../img/rai.png" className="w-8 h-8"/>
+    <img src="/img/rai.png" className="w-8 h-8"/>
     <a href="/" className="flex w-full m-2 hover:animate-bounce">RHYTHMAI</a>
     <a href="/projects" className="flex w-full justify-center m-2 hover:animate-ping">PROJECTS</a>
     <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-ping">ABOUT US</a>
