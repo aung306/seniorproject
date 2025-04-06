@@ -3,38 +3,25 @@ import { useState, useEffect } from 'react';
 import type { Template } from '@pdfme/common';
 import { BLANK_PDF } from '@pdfme/common';
 import { generate } from '@pdfme/generator';
-import { line, image } from '@pdfme/schemas';
 
-//for reference, the pdf is 200 pixels long
-const template: Template = {
-  basePdf: BLANK_PDF,
-  schemas: [
-    [
-      {
-        name: 'Title',
-        type: 'text',
-        position: { x: 100, y: 10 },
-        width: 100,
-        height: 10,
-      },
-      {
-        name: 'Description',
-        type: 'text',
-        position: { x: 10, y: 30 },
-        width: 190,
-        height: 200,
-      },
-      {
-        name: 'Composition',
-        type: 'text',
-        position: { x: 10, y: 50 },
-        width: 190,
-        height: 200,
-      },
-    ],
-  ],
-};
+export async function processAudio(audioFile: File, description: string) {
+  console.log(description);
+  const formData = new FormData();
+  formData.append('audio', audioFile);
+  formData.append('description', description);
 
+  /* const response = await fetch('http://localhost:5000/process', {
+    method: 'POST',
+    body: formData,
+  }); 
+
+  if (!response.ok) {
+    throw new Error('Python service failed');
+  } 
+
+  return await response.json(); */
+  return description;
+}
 
 export const meta: MetaFunction = () => {
   return [
@@ -72,12 +59,15 @@ export default function Index() {
     const inputs = [{
       Title: 'RhythmAI',
       Description: audioDescription,
-      Composition: 'Thanks for using our ComposerBot!'
+      Composition: audioFile
     }];
 
     try {
-      const pdf = await generate({ template, inputs });
-      const blob = new Blob([pdf.buffer], { type: 'application/pdf' });
+      const result = await processAudio(audioFile, audioDescription);
+      //console.log(result);
+      const pdf = await fetch('/output/output.pdf');
+      if (!pdf.ok) throw new Error('Failed to fetch PDF')
+      const blob = await pdf.blob();
 
       // Create a download URL for the PDF blob
       const url = URL.createObjectURL(blob);
