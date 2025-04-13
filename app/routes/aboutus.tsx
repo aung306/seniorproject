@@ -17,15 +17,18 @@ export default function AboutUs() {
     <a href="/projects" className="flex w-full justify-center m-2 hover:animate-ping">PROJECTS</a>
     <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-ping">ABOUT US</a>
   </header>
-    <div className="flex w-full max-w-6xl">
+    <div className="flex w-full">
       <div className="flex-1 p-10 m-10">
-      <p className="font-[Poppins] text-purple-100">Hi! We're Angela & David</p>
+      <p className="font-[Poppins] text-purple-100">Hi! We're Angela & David, the creators of RhythmAI.</p>
       <p className="text-7xl animate-fade-down mt-24 mb-24 font-[Poppins] font-bold text-purple-100">
-        And this is our Senior Project!
+        This is our Senior Project!
       </p>
-      <p className="text-purple-100">Explore our website!</p>
+      <p className="font-bold font-mono text-purple-100">We're two computer science students who want to share the joy of music with everyone.</p>
+      <p className="font-bold font-mono text-purple-100">Join us in our journey by trying our products!</p>
       </div>
-      
+      <div className="flex-2 w-[0.4] p-10 m-10">
+        <img src="/img/about.gif" className="w-full"/>
+      </div>
     </div>
   </div>
   </div>

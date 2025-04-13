@@ -19,17 +19,18 @@ export default function Projects() {
   </header>
     <div className="flex w-full max-w">
       <div className="flex-1 pl-4 pr-4 m-10">
-      <ul className="bg-[url('/img/composer.gif')] bg-cover font-[Poppins] mx-auto max-w-6xl p-6 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
-        <li>
+      <div className="bg-[url('/img/about.gif')] bg-center bg-cover w-full font-[Poppins] p-6 rounded-md border border-gray-300 bg-[#0b0014]">
+        <div>
           <p
-            className="text-center font-[Poppins] mb-48 text-xl p-2 text-violet-300 mt-0"
+            className="text-center font-[Poppins] mb-24 text-2xl p-2 text-violet-200 mt-0"
           >
             ComposerBot
           </p>
           <p
-            className="text-center rounded-md border border-gray-300 bg-purple-100 font-mono mt-10 mb-20 text-xl p-6 text-violet-600"
+            className="text-center rounded-md border border-gray-300 bg-purple-100 font-mono mt-10 mb-20 text-xl p-6 text-violet-800"
           >
-            Our First Bot!
+            <p>A sheet music specialist!</p>
+            <p>Simply upload an audio file of the music you'd like to compose, then add any tweaks you'd like ComposerBot to add to the sheet music, and you're done.</p>
           </p>
           <p
             className="text-center rounded-md border border-gray-300 bg-violet-800 font-[Poppins] mb-10 text-sm p-4 text-purple-100 mt-0"
@@ -38,21 +39,22 @@ export default function Projects() {
             Try it out!
             </a>
           </p>
-        </li>
-      </ul>
+        </div>
+      </div>
       </div>
       <div className="flex-1 pl-4 pr-4 m-10">
-      <ul className="bg-[url('/img/lala.gif')] bg-cover font-[Poppins] mx-auto max-w-6xl p-6 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
+      <ul className="bg-[url('/img/about.gif')] bg-center bg-cover w-full font-[Poppins] p-6 rounded-md border border-gray-300 bg-[#0b0014]">
         <li>
           <p
-            className="text-center font-[Poppins] mb-48 text-xl p-2 text-violet-400 mt-0"
-          >
+            className="text-center font-[Poppins] mb-24 text-2xl p-2 text-violet-200 mt-0"
+            >
             LaLaBot
           </p>
           <p
-            className="text-center rounded-md border border-gray-300 bg-purple-100 font-mono mt-10 mb-20 text-xl p-6 text-violet-600"
+            className="text-center rounded-md border border-gray-300 bg-purple-100 font-mono mt-10 mb-20 text-xl p-6 text-violet-800"
           >
-            Our Next Project!
+            <p>A rhythm finding genius!</p>
+            <p>Currently a work in progress! LaLaBot hopes to open new doors to ordinary sounds by creating music given any audio file, even if it's just the sound of rain!</p>
           </p>
           <p
             className="text-center rounded-md border border-gray-300 bg-violet-800 font-[Poppins] mb-10 text-sm p-4 text-purple-100 mt-0"
@@ -63,17 +65,18 @@ export default function Projects() {
       </ul>
       </div>
       <div className="flex-1 pl-4 pr-4 m-10">
-      <ul className="bg-[url('/img/tune.gif')] bg-cover font-[Poppins] mx-auto max-w-6xl p-6 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
+      <ul className="bg-[url('/img/about.gif')] bg-center bg-cover w-full font-[Poppins] p-6 rounded-md border border-gray-300 bg-[#0b0014]">
         <li>
           <p
-            className="text-center font-[Poppins] mb-48 text-xl p-2 text-violet-400 mt-0"
-          >
+            className="text-center font-[Poppins] mb-24 text-2xl p-2 text-violet-200 mt-0"
+            >
             TuneBot
           </p>
           <p
-            className="text-center rounded-md border border-gray-300 bg-purple-100 font-mono mt-10 mb-20 text-xl p-6 text-violet-600"
+            className="text-center rounded-md border border-gray-300 bg-purple-100 font-mono mt-10 mb-20 text-xl p-6 text-violet-800"
           >
-            Summer 2025
+            <p>An autotuner!</p>
+            <p>Another work in progress. TuneBot will alleviate any problems with pitches or voice cracks with a simple click, instead of hours pitch-perfecting your voice!</p>
           </p>
           <p
             className="text-center rounded-md border border-gray-300 bg-violet-800 font-[Poppins] mb-10 text-sm p-4 text-purple-100 mt-0"
