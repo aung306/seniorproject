@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import AboutUs from './aboutus';
+import AboutUs from '../routes/aboutus';
 
 describe('About Us Page', () => {
   test('renders without crashing and displays key text', () => {

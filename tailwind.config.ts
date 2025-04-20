@@ -3,7 +3,12 @@ import type { Config } from "tailwindcss";
 export default {
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        dancing: ['"Dancing Script"', 'cursive'],
+        rajdhani: ['Rajdhani', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

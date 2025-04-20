@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Index from './_index'; // Adjust the import path if needed
+import Index from '../routes/_index'; // Adjust the import path if needed
 
 describe('Index Page', () => {
   test('renders without crashing and displays key text', () => {
