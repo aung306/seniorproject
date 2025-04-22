@@ -19,11 +19,11 @@ export default function AboutUs() {
     <div className="flex w-full">
       <div className="flex-1 p-10 m-10">
       <p className="opacity-0 animate-fade-down [animation-delay:0.3s] font-dancing text-3xl text-purple-100">Hi! We're Angela & David, the creators of RhythmAI.</p>
-      <p className="opacity-0 animate-fade-down [animation-delay:0.9s] text-7xl mt-24 mb-24 font-rajdhani font-semibold text-purple-100">
+      <p className="opacity-0 animate-fade-down [animation-delay:1.2s] text-7xl mt-24 mb-24 font-rajdhani font-semibold text-purple-100">
         This is our Senior Project!
       </p>
-      <p className="opacity-0 animate-fade-down [animation-delay:0.9s] font-rajdhani text-purple-100">We're two computer science students who want to share the joy of music with everyone.</p>
-      <p className="opacity-0 animate-fade-down [animation-delay:1.2s] font-rajdhani text-purple-100">Join us in our journey by trying our products!</p>
+      <p className="opacity-0 animate-fade-down [animation-delay:2.1s] font-rajdhani text-purple-100">We're two computer science students who want to share the joy of music with everyone.</p>
+      <p className="opacity-0 animate-fade-down [animation-delay:2.1s] font-rajdhani text-purple-100">Join us in our journey by trying our products!</p>
       </div>
       <div className="animate-fade-in flex-2 w-[0.4] mr-20">
         <img src="/img/about.gif" className="w-full"/>
