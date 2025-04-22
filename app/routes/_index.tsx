@@ -101,7 +101,7 @@ export default function Index() {
                     <a
                       href="/community/sample1.pdf"
                       download
-                      className="inline-block mt-2 rounded-md border border-gray-300 bg-violet-800 px-4 py-2 text-sm text-purple-100"
+                      className="inline-block mt-2 rounded-md border border-gray-300 hover:bg-violet-900 bg-violet-800 px-4 py-2 text-sm text-purple-100"
                     >
                       Download Sheet Music
                     </a>
@@ -115,7 +115,7 @@ export default function Index() {
                     <a
                       href="/community/sample1.pdf"
                       download
-                      className="inline-block mt-2 rounded-md border border-gray-300 bg-violet-800 px-4 py-2 text-sm text-purple-100"
+                      className="inline-block mt-2 rounded-md border border-gray-300 hover:bg-violet-900 bg-violet-800 px-4 py-2 text-sm text-purple-100"
                     >
                       Download Sheet Music
                     </a>
@@ -128,14 +128,14 @@ export default function Index() {
                     <a
                       href="/community/sample1.pdf"
                       download
-                      className="items-center inline-block mt-2 rounded-md border border-gray-300 bg-violet-800 px-4 py-2 text-sm text-purple-100"
+                      className="items-center inline-block mt-2 rounded-md border border-gray-300 hover:bg-violet-900 bg-violet-800 px-4 py-2 text-sm text-purple-100"
                     >
                       Download Sheet Music
                     </a>
                   </li>
                 </ul>
                 <button 
-                  className="rounded-md border border-gray-300 bg-violet-800 p-4 text-sm text-purple-100"
+                  className="rounded-md border border-gray-300 bg-violet-800 hover:bg-violet-900 p-4 text-sm text-purple-100"
                   onClick={() => setShowCommunity(false)}
                 >
                   ⬅ Back to Compose
@@ -157,7 +157,7 @@ export default function Index() {
                       className="flex w-full text-center rounded-md border border-gray-300 bg-purple-100 font-rajdhani font-semibold mb-12 text-l p-6 text-gray-600"
                     />
                     <button type="submit"
-                      className="text-center w-full rounded-md border border-gray-300 bg-violet-800 font-rajdhani font-semibold mb-10 p-4 text-md text-purple-100"
+                      className="text-center w-full rounded-md border border-gray-300 bg-violet-800 hover:bg-violet-900 font-rajdhani font-semibold mb-10 p-4 text-md text-purple-100"
                       disabled={loading}
                       >
                         {loading ? 'Generating PDF...' : 'Compose'}
@@ -168,7 +168,7 @@ export default function Index() {
                             <a
                               href={downloadLink}
                               download="rhythmai-composerbot.pdf"
-                              className="text-center rounded-md border border-gray-300 bg-violet-800 font-rajdhani p-4 text-sm text-purple-100"
+                              className="text-center rounded-md border border-gray-300 bg-violet-800 hover:bg-violet-900 font-rajdhani p-4 text-sm text-purple-100"
                             >
                               Download PDF
                             </a>
@@ -183,7 +183,7 @@ export default function Index() {
                   <p className="text-center mb-2">🎼 Get some inspiration from other users!🎼 </p>
                   <button 
                     onClick={() => setShowCommunity(true)}
-                    className="text-center w-full rounded-md border border-gray-300 bg-violet-800 font-dancing p-4 text-xl text-purple-100"
+                    className="text-center w-full rounded-md border border-gray-300 bg-violet-800 hover:bg-violet-900 font-dancing p-4 text-xl text-purple-100"
                   >
                     Community
                   </button>

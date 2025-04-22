@@ -31,13 +31,13 @@ export default function Projects() {
             <p>A sheet music specialist!</p>
             <p>Simply upload an audio file of the music you'd like to compose, then add any tweaks you'd like ComposerBot to add to the sheet music, and you're done.</p>
           </p>
+          <a href="/">
           <p
-            className="text-center rounded-md border border-gray-300 bg-violet-800 font-rajdhani mb-10 text-sm p-4 text-purple-100 mt-0"
+            className="text-center rounded-md border border-gray-300 bg-violet-800 hover:bg-violet-900 font-rajdhani mb-10 text-sm p-4 text-purple-100 mt-0"
           >
-            <a href="/">
             Try it out!
-            </a>
           </p>
+          </a>
         </div>
       </div>
       </div>
