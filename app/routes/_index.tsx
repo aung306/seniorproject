@@ -93,9 +93,9 @@ export default function Index() {
                 <p className="mb-4">🎵 Browse what others have made! 🎵</p>
                 <ul className="mb-4 space-y-6 text-left">
                   <li className="border border-violet-300 p-4 rounded-md bg-purple-100">
-                    <p className="text-lg font-semibold">🎶 Jazz Improv from Tokyo</p>
+                    <p className="text-lg font-semibold">🎶 Eine Kleine </p>
                     <audio controls className="w-full mt-2">
-                      <source src="/community/sample1.mp3" type="audio/mpeg" />
+                      <source src="/community/sample1.wav" type="audio/mpeg" />
                       Your browser does not support the audio element.
                     </audio>
                     <a
@@ -108,12 +108,12 @@ export default function Index() {
                   </li>
 
                   <li className="border border-violet-300 p-4 rounded-md bg-purple-100">
-                    <p className="text-lg font-semibold">🎼 Fantasy Piano Piece by Luna</p>
+                    <p className="text-lg font-semibold">🎼 Invention 4 in D Minor</p>
                     <audio controls className="w-full mt-2">
-                      <source src="/community/sample1.mp3" type="audio/mpeg" />
+                      <source src="/community/sample2.wav" type="audio/mpeg" />
                     </audio>
                     <a
-                      href="/community/sample1.pdf"
+                      href="/community/sample2.pdf"
                       download
                       className="inline-block mt-2 rounded-md border border-gray-300 hover:bg-violet-900 bg-violet-800 px-4 py-2 text-sm text-purple-100"
                     >
@@ -121,12 +121,38 @@ export default function Index() {
                     </a>
                   </li>
                   <li className="border border-violet-300 p-4 rounded-md bg-purple-100">
-                    <p className="text-lg font-semibold">🪕 Bluegrass Fusion by Max</p>
+                    <p className="text-lg font-semibold">🪕 NC Music Vocals</p>
                     <audio controls className="w-full mt-2">
-                      <source src="/community/sample1.mp3" type="audio/mpeg" />
+                      <source src="/community/sample3.wav" type="audio/mpeg" />
                     </audio>
                     <a
-                      href="/community/sample1.pdf"
+                      href="/community/sample3.pdf"
+                      download
+                      className="items-center inline-block mt-2 rounded-md border border-gray-300 hover:bg-violet-900 bg-violet-800 px-4 py-2 text-sm text-purple-100"
+                    >
+                      Download Sheet Music
+                    </a>
+                  </li>
+                  <li className="border border-violet-300 p-4 rounded-md bg-purple-100">
+                    <p className="text-lg font-semibold">🎶 Sneaky Snitch</p>
+                    <audio controls className="w-full mt-2">
+                      <source src="/community/sample4.wav" type="audio/mpeg" />
+                    </audio>
+                    <a
+                      href="/community/sample4.pdf"
+                      download
+                      className="items-center inline-block mt-2 rounded-md border border-gray-300 hover:bg-violet-900 bg-violet-800 px-4 py-2 text-sm text-purple-100"
+                    >
+                      Download Sheet Music
+                    </a>
+                  </li>
+                  <li className="border border-violet-300 p-4 rounded-md bg-purple-100">
+                    <p className="text-lg font-semibold">🎼 Twinkle Twinkle</p>
+                    <audio controls className="w-full mt-2">
+                      <source src="/community/sample5.wav" type="audio/mpeg" />
+                    </audio>
+                    <a
+                      href="/community/sample5.pdf"
                       download
                       className="items-center inline-block mt-2 rounded-md border border-gray-300 hover:bg-violet-900 bg-violet-800 px-4 py-2 text-sm text-purple-100"
                     >
