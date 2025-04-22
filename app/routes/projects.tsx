@@ -10,14 +10,14 @@ export const meta: MetaFunction = () => {
 export default function Projects() {
   return (
 <div className="bg-[url('/img/background.gif')] bg-repeat bg-[length:1200px_1200px] min-h-screen w-full">
-<header className="font-rajdhani font-bold text-center flex w-full max-w text-purple-100 p-4 ml-16">
+<header className="animate-fade-in font-rajdhani font-bold text-center flex w-full max-w text-purple-100 p-4 pl-16">
     <img src="/img/rai.png" className="w-8 h-8"/>
     <a href="/" className="flex w-full m-2 hover:animate-bounce">RHYTHMAI</a>
     <a href="/projects" className="flex w-full justify-center m-2 hover:animate-ping">PROJECTS</a>
-    <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-ping">ABOUT US</a>
+    <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-bounce">ABOUT US</a>
   </header>
     <div className="flex w-full max-w">
-      <div className="flex-1 pl-4 pr-4 m-10">
+      <div className="opacity-0 animate-fade-down [animation-delay:0.3s] flex-1 pl-4 pr-4 m-10">
       <div className="bg-[url('/img/about.gif')] bg-center bg-cover w-full font-rajdhani p-6 rounded-md border border-gray-300 bg-[#0b0014]">
         <div>
           <p
@@ -41,7 +41,7 @@ export default function Projects() {
         </div>
       </div>
       </div>
-      <div className="flex-1 pl-4 pr-4 m-10">
+      <div className="opacity-0 animate-fade-down [animation-delay:0.6s] flex-1 pl-4 pr-4 m-10">
       <ul className="bg-[url('/img/about.gif')] bg-center bg-cover w-full font-rajdhani p-6 rounded-md border border-gray-300 bg-[#0b0014]">
         <li>
           <p
@@ -63,7 +63,7 @@ export default function Projects() {
         </li>
       </ul>
       </div>
-      <div className="flex-1 pl-4 pr-4 m-10">
+      <div className="opacity-0 animate-fade-down [animation-delay:0.9s] flex-1 pl-4 pr-4 m-10">
       <ul className="bg-[url('/img/about.gif')] bg-center bg-cover w-full font-rajdhani p-6 rounded-md border border-gray-300 bg-[#0b0014]">
         <li>
           <p

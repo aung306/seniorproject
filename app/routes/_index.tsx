@@ -70,26 +70,25 @@ export default function Index() {
 
   return (
       <div className="bg-[url('/img/background.gif')] bg-repeat bg-[length:1200px_1200px] min-h-screen w-full">
-        <header className="font-rajdhani font-bold text-center flex w-full max-w text-purple-100 p-4 ml-16">
+        <header className="animate-fade-in font-rajdhani font-bold text-center flex w-full max-w text-purple-100 p-4 pl-16">
           <img src="/img/rai.png" className="w-8 h-8"/>
           <a href="/" className="flex w-full m-2 hover:animate-bounce">RHYTHMAI</a>
           <a href="/projects" className="flex w-full justify-center m-2 hover:animate-ping">PROJECTS</a>
-          <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-ping">ABOUT US</a>
+          <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-bounce">ABOUT US</a>
         </header>
-
         <div className="flex w-full">
           <div className="w-1/2 p-10 m-10 mr-0">
-            <p className="font-dancing text-3xl text-purple-100">Enhancing music with the power of technology</p>
-            <p className="text-9xl animate-fade-down mt-16 mb-16 font-rajdhani font-semibold text-purple-100">
+            <p className="opacity-0 animate-fade-down [animation-delay:0.3s] font-dancing text-3xl text-purple-100">Enhancing music with the power of technology</p>
+            <p className="opacity-0 text-9xl animate-fade-down [animation-delay:0.9s] mt-16 mb-16 font-rajdhani font-semibold text-purple-100">
               Composer Bot
             </p>
-            <p className="text-purple-100 font-dancing text-3xl">Create sheet music for any audio 🎶</p>
+            <p className="opacity-0 animate-fade-down [animation-delay:1.5s] text-purple-100 font-dancing text-3xl">Create sheet music for any audio 🎶</p>
           </div>
 
-          <div className="w-1/2 p-10 m-10 ml-0">
+          <div className="opacity-0 animate-fade-down [animation-delay:2.1s] w-1/2 p-10 m-10 ml-0">
             {showCommunity ? (
               // Community View
-              <div className="font-rajdhani max-w w-3/4 p-8 rounded-md border border-gray-300 bg-purple-50 text-center">
+              <div className="animate-fade-down font-rajdhani max-w w-3/4 p-8 rounded-md border border-gray-300 bg-purple-50 text-center">
                 <h2 className="text-2xl font-semibold mb-4 text-violet-900">Community Creations</h2>
                 <p className="mb-4">🎵 Browse what others have made! 🎵</p>
                 <ul className="mb-4 space-y-6 text-left">
@@ -146,7 +145,7 @@ export default function Index() {
               // Compose View
               <>
               <form onSubmit={handleSubmit}>
-                <ul className="font-rajdhani flex justify-center items-center max-w w-3/4 p-8 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
+                <ul className="animate-fade-down font-rajdhani flex justify-center items-center max-w w-3/4 p-8 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
                   <li>
                     <input type="file" name="mp3" accept=".mp3" onChange={handleFileChange} className="flex justify-center w-full text-center rounded-md border border-gray-300 bg-purple-100 p-3 font-rajdhani font-semibold text-sm text-violet-900"/>
                     <div className="flex justify-center pt-3 pb-3">
@@ -179,7 +178,7 @@ export default function Index() {
                   </li>
                 </ul>
               </form>
-              <ul className="font-rajdhani flex justify-center items-center mt-4 max-w w-3/4 p-8 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
+              <ul className="animate-fade-down font-rajdhani flex justify-center items-center mt-4 max-w w-3/4 p-8 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
                 <li>
                   <p className="text-center mb-2">🎼 Get some inspiration from other users!🎼 </p>
                   <button 
