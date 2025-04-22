@@ -32,6 +32,7 @@ export default function Index() {
   const [audioDescription, setAudioDescription] = useState<string>('');
   const [loading, setLoading] = useState(false);
   const [downloadLink, setDownloadLink] = useState<string | null>(null);
+  const [showCommunity, setShowCommunity] = useState(false); // <-- New state
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
@@ -53,25 +54,13 @@ export default function Index() {
 
     setLoading(true);
 
-    const inputs = [{
-      Title: 'RhythmAI',
-      Description: audioDescription,
-      Composition: audioFile
-    }];
-
     try {
       const result = await processAudio(audioFile, audioDescription);
-      //console.log(result);
       const pdf = await fetch('/output/output.pdf');
       if (!pdf.ok) throw new Error('Failed to fetch PDF')
       const blob = await pdf.blob();
-
-      // Create a download URL for the PDF blob
       const url = URL.createObjectURL(blob);
-
-      // Set the download link for the user
       setDownloadLink(url);
-
     } catch (error) {
       console.error('Error generating PDF:', error);
     } finally {
@@ -80,61 +69,131 @@ export default function Index() {
   };
 
   return (
-<div className="bg-[url('/img/background.gif')] bg-cover w-full h-screen">
-<div className="bg-black bg-cover bg-opacity-50 absolute top-0 left-0 w-full h-screen">
-  <header className="font-rajdhani text-center flex w-full max-w text-purple-100 p-4 m-2 ml-16">
-    <img src="/img/rai.png" className="w-8 h-8"/>
-    <a href="/" className="flex w-full m-2 hover:animate-bounce">RHYTHMAI</a>
-    <a href="/projects" className="flex w-full justify-center m-2 hover:animate-ping">PROJECTS</a>
-    <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-ping">ABOUT US</a>
-  </header>
-    <div className="flex w-full">
-      <div className="w-1/2 p-10 m-10 mr-0">
-      <p className="font-dancing text-3xl text-purple-100">Enhancing music with the power of technology</p>
-      <p className="text-9xl animate-fade-down mt-16 mb-16 font-rajdhani font-semibold text-purple-100">
-        Composer Bot
-      </p>
-      <p className="text-purple-100 font-dancing text-3xl">Create sheet music for any audio</p>
-      </div>
-      <div className="w-1/2 p-10 m-10 ml-0">
-      <form onSubmit={handleSubmit}>
-      <ul className="font-rajdhani flex justify-center items-center max-w w-3/4 p-8 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
-        <li>
-          <input type="file" name="mp3" accept=".mp3" onChange={handleFileChange} className="flex justify-center w-full text-center rounded-md border border-gray-300 bg-purple-100 p-3 font-rajdhani font-semibold text-sm text-violet-900"/>
-          <div className="flex justify-center pt-3 pb-3">
-          <img src="/img/think.gif" className="opacity-50 w-[25%] object-contain"/>
+      <div className="bg-[url('/img/background.gif')] bg-repeat bg-[length:1200px_1200px] min-h-screen w-full">
+        <header className="font-rajdhani font-bold text-center flex w-full max-w text-purple-100 p-4 ml-16">
+          <img src="/img/rai.png" className="w-8 h-8"/>
+          <a href="/" className="flex w-full m-2 hover:animate-bounce">RHYTHMAI</a>
+          <a href="/projects" className="flex w-full justify-center m-2 hover:animate-ping">PROJECTS</a>
+          <a href="/aboutus" className="flex w-full justify-center m-2 hover:animate-ping">ABOUT US</a>
+        </header>
+
+        <div className="flex w-full">
+          <div className="w-1/2 p-10 m-10 mr-0">
+            <p className="font-dancing text-3xl text-purple-100">Enhancing music with the power of technology</p>
+            <p className="text-9xl animate-fade-down mt-16 mb-16 font-rajdhani font-semibold text-purple-100">
+              Composer Bot
+            </p>
+            <p className="text-purple-100 font-dancing text-3xl">Create sheet music for any audio 🎶</p>
           </div>
-          <input type="text" placeholder="Tell us a little it about your audio..."
-            value={audioDescription}
-            onChange={handleDescriptionChange}
-            className="flex w-full text-center rounded-md border border-gray-300 bg-purple-100 font-rajdhani font-semibold mb-12 text-l p-6 text-gray-600"
-          />
-            
-          <button type="submit"
-            className="text-center w-full rounded-md border border-gray-300 bg-violet-800 font-rajdhani font-semibold mb-10 p-4 text-md text-purple-100"
-            disabled={loading}
-            >
-              {loading ? 'Generating PDF...' : 'Compose'}
-          </button>
-        <div className="text-center">
-          {downloadLink && (
-              <div className="mt-4">
-                <a
-                  href={downloadLink}
-                  download="rhythmai-composerbot.pdf"
-                  className="text-center rounded-md border border-gray-300 bg-violet-800 font-rajdhani p-4 text-sm text-purple-100"
+
+          <div className="w-1/2 p-10 m-10 ml-0">
+            {showCommunity ? (
+              // Community View
+              <div className="font-rajdhani max-w w-3/4 p-8 rounded-md border border-gray-300 bg-purple-50 text-center">
+                <h2 className="text-2xl font-semibold mb-4 text-violet-900">Community Creations</h2>
+                <p className="mb-4">🎵 Browse what others have made! 🎵</p>
+                <ul className="mb-4 space-y-6 text-left">
+                  <li className="border border-violet-300 p-4 rounded-md bg-purple-100">
+                    <p className="text-lg font-semibold">🎶 Jazz Improv from Tokyo</p>
+                    <audio controls className="w-full mt-2">
+                      <source src="/community/sample1.mp3" type="audio/mpeg" />
+                      Your browser does not support the audio element.
+                    </audio>
+                    <a
+                      href="/community/sample1.pdf"
+                      download
+                      className="inline-block mt-2 rounded-md border border-gray-300 bg-violet-800 px-4 py-2 text-sm text-purple-100"
+                    >
+                      Download Sheet Music
+                    </a>
+                  </li>
+
+                  <li className="border border-violet-300 p-4 rounded-md bg-purple-100">
+                    <p className="text-lg font-semibold">🎼 Fantasy Piano Piece by Luna</p>
+                    <audio controls className="w-full mt-2">
+                      <source src="/community/sample1.mp3" type="audio/mpeg" />
+                    </audio>
+                    <a
+                      href="/community/sample1.pdf"
+                      download
+                      className="inline-block mt-2 rounded-md border border-gray-300 bg-violet-800 px-4 py-2 text-sm text-purple-100"
+                    >
+                      Download Sheet Music
+                    </a>
+                  </li>
+                  <li className="border border-violet-300 p-4 rounded-md bg-purple-100">
+                    <p className="text-lg font-semibold">🪕 Bluegrass Fusion by Max</p>
+                    <audio controls className="w-full mt-2">
+                      <source src="/community/sample1.mp3" type="audio/mpeg" />
+                    </audio>
+                    <a
+                      href="/community/sample1.pdf"
+                      download
+                      className="items-center inline-block mt-2 rounded-md border border-gray-300 bg-violet-800 px-4 py-2 text-sm text-purple-100"
+                    >
+                      Download Sheet Music
+                    </a>
+                  </li>
+                </ul>
+                <button 
+                  className="rounded-md border border-gray-300 bg-violet-800 p-4 text-sm text-purple-100"
+                  onClick={() => setShowCommunity(false)}
                 >
-                  Download PDF
-                </a>
+                  ⬅ Back to Compose
+                </button>
               </div>
-          )}
+            ) : (
+              // Compose View
+              <>
+              <form onSubmit={handleSubmit}>
+                <ul className="font-rajdhani flex justify-center items-center max-w w-3/4 p-8 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
+                  <li>
+                    <input type="file" name="mp3" accept=".mp3" onChange={handleFileChange} className="flex justify-center w-full text-center rounded-md border border-gray-300 bg-purple-100 p-3 font-rajdhani font-semibold text-sm text-violet-900"/>
+                    <div className="flex justify-center pt-3 pb-3">
+                      <img src="/img/think.gif" className="opacity-50 w-[25%] object-contain"/>
+                    </div>
+                    <input type="text" placeholder="Tell us a little bit about your audio..."
+                      value={audioDescription}
+                      onChange={handleDescriptionChange}
+                      className="flex w-full text-center rounded-md border border-gray-300 bg-purple-100 font-rajdhani font-semibold mb-12 text-l p-6 text-gray-600"
+                    />
+                    <button type="submit"
+                      className="text-center w-full rounded-md border border-gray-300 bg-violet-800 font-rajdhani font-semibold mb-10 p-4 text-md text-purple-100"
+                      disabled={loading}
+                      >
+                        {loading ? 'Generating PDF...' : 'Compose'}
+                    </button>
+                    <div className="text-center">
+                      {downloadLink && (
+                          <div className="mt-4">
+                            <a
+                              href={downloadLink}
+                              download="rhythmai-composerbot.pdf"
+                              className="text-center rounded-md border border-gray-300 bg-violet-800 font-rajdhani p-4 text-sm text-purple-100"
+                            >
+                              Download PDF
+                            </a>
+                          </div>
+                      )}
+                    </div>
+                  </li>
+                </ul>
+              </form>
+              <ul className="font-rajdhani flex justify-center items-center mt-4 max-w w-3/4 p-8 divide-y divide-gray-200 rounded-md border border-gray-300 bg-purple-50">
+                <li>
+                  <p className="text-center mb-2">🎼 Get some inspiration from other users!🎼 </p>
+                  <button 
+                    onClick={() => setShowCommunity(true)}
+                    className="text-center w-full rounded-md border border-gray-300 bg-violet-800 font-dancing p-4 text-xl text-purple-100"
+                  >
+                    Community
+                  </button>
+                </li>
+              </ul>
+              </>
+            )}
+          </div>
         </div>
-        </li>
-      </ul>
-      </form>
-      </div>
     </div>
-  </div>
-  </div>
   );
 }

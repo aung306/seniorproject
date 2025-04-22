@@ -9,9 +9,8 @@ export const meta: MetaFunction = () => {
 
 export default function AboutUs() {
   return (
-<div className="bg-[url('/img/background.gif')] bg-cover w-full h-screen">
-<div className="bg-black bg-cover bg-opacity-50 absolute top-0 left-0 w-full h-screen">
-<header className="font-rajdhani font-bold text-center flex w-full max-w text-purple-100 p-4 m-2 ml-16">
+<div className="bg-[url('/img/background.gif')] bg-repeat bg-[length:1200px_1200px] min-h-screen w-full">
+<header className="font-rajdhani font-bold text-center flex w-full max-w text-purple-100 p-4 ml-16">
     <img src="/img/rai.png" className="w-8 h-8"/>
     <a href="/" className="flex w-full m-2 hover:animate-bounce">RHYTHMAI</a>
     <a href="/projects" className="flex w-full justify-center m-2 hover:animate-ping">PROJECTS</a>
@@ -30,7 +29,6 @@ export default function AboutUs() {
         <img src="/img/about.gif" className="w-full"/>
       </div>
     </div>
-  </div>
   </div>
   );
 }
